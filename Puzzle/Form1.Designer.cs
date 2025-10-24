@@ -1,6 +1,6 @@
 ﻿namespace Puzzle
 {
-    partial class Form1
+    partial class PuzzleForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PuzzleForm));
             this.SuspendLayout();
             // 
-            // Form1
+            // PuzzleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::Puzzle.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.ClientSize = new System.Drawing.Size(982, 753);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "PuzzleForm";
             this.Text = "Пазлы";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private System.Windows.Forms.ComboBox difficultyComboBox;
     }
 }
 
