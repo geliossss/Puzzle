@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|d:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0438\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\projects\\puzzle\\puzzle\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|solutionrelative:puzzle\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\puzzle\\puzzlegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|solutionrelative:puzzle\\puzzlegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\puzzle\\puzzlepiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|solutionrelative:puzzle\\puzzlepiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|d:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0438\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\projects\\puzzle\\puzzle\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|solutionrelative:puzzle\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\puzzle\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|solutionrelative:puzzle\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\puzzle\\puzzlegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|solutionrelative:puzzle\\puzzlegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\puzzle\\puzzlepiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EDC7927-8CCD-4E45-A013-DB923E170754}|Puzzle\\Puzzle.csproj|solutionrelative:puzzle\\puzzlepiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "PuzzleGame.cs",
               "DocumentMoniker": "D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\Puzzle\\PuzzleGame.cs",
               "RelativeDocumentMoniker": "Puzzle\\PuzzleGame.cs",
               "ToolTip": "D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\Puzzle\\PuzzleGame.cs",
               "RelativeToolTip": "Puzzle\\PuzzleGame.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAAlwPIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAN0AAAAAAAAAAAAmwO8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-20T06:35:36.455Z",
               "IsPinned": true,
@@ -44,13 +44,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GameForm.cs",
               "DocumentMoniker": "D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\Puzzle\\GameForm.cs",
               "RelativeDocumentMoniker": "Puzzle\\GameForm.cs",
               "ToolTip": "D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\Puzzle\\GameForm.cs",
               "RelativeToolTip": "Puzzle\\GameForm.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAYwLgAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAcwKIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-20T16:00:15.02Z",
               "IsPinned": true,
@@ -58,13 +58,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "PuzzlePiece.cs",
               "DocumentMoniker": "D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\Puzzle\\PuzzlePiece.cs",
               "RelativeDocumentMoniker": "Puzzle\\PuzzlePiece.cs",
               "ToolTip": "D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\Puzzle\\PuzzlePiece.cs",
               "RelativeToolTip": "Puzzle\\PuzzlePiece.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAuwG0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-20T06:37:01.776Z",
               "IsPinned": true,
@@ -78,7 +78,7 @@
               "RelativeDocumentMoniker": "Puzzle\\Form1.cs",
               "ToolTip": "D:\\\u0443\u043D\u0438\u043A 7 \u0441\u0435\u043C\\\u0418\u043D\u0442. \u0441\u0440\u0435\u0434\u044B \u043F\u0440\u043E\u0433\u0440\\Projects\\Puzzle\\Puzzle\\Form1.cs",
               "RelativeToolTip": "Puzzle\\Form1.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAnwNUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOsAAAAAAAAAAADwv/kAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-20T06:32:01.728Z",
               "IsPinned": true,
