@@ -94,11 +94,12 @@ namespace Puzzle
         {
             int margin = 50;
             int playAreaWidth = originalImage.Width + 200;
+            int playAreaHeight = originalImage.Height + 200;
 
             foreach (var piece in pieces)
             {
                 int x = random.Next(margin, playAreaWidth - pieceWidth - margin);
-                int y = random.Next(margin, originalImage.Height + 200 - pieceHeight - margin);
+                int y = random.Next(-margin, playAreaHeight - pieceHeight - margin*2);
 
                 piece.DrawPosition = new Point(x, y);
                 piece.UpdateCorrectness(pieceWidth, pieceHeight);
@@ -215,11 +216,22 @@ namespace Puzzle
                 }
             }
 
+            //playField = new Rectangle(0, 0, cols * pieceWidth, rows * pieceHeight);
+            //using (var whiteBrush = new SolidBrush(Color.White))
+            //{
+            //    g.FillRectangle(whiteBrush, playField);
+            //}
+
             // Рисуем все кусочки
             foreach (var piece in pieces.OrderBy(p => !p.IsLocked))
             {
                 piece.Draw(g, pieceWidth, pieceHeight);
             }
+
+           // if (selectedPiece != null) g.DrawString($"({selectedPiece.DrawPosition.X}, {selectedPiece.DrawPosition.Y})", new Font("Arial", 10), Brushes.Black, selectedPiece.DrawPosition.X, selectedPiece.DrawPosition.Y - 15);
+
+
+
         }
 
         public void SolvePuzzle()
