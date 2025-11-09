@@ -11,9 +11,15 @@ namespace Puzzle
         private Bitmap selectedImage;
         private string[] imagePaths;
         private int gridSize = 4;
+
         private Button startGameBtn;
+        private Button recordsBtn;
         private FlowLayoutPanel imagesFlowPanel;
         private Label titleLabel;
+
+        private PuzzleItem selectedPuzzle;
+
+        public int UserID { get; private set; }
 
         public PuzzleForm()
         {
@@ -83,6 +89,18 @@ namespace Puzzle
             };
             startGameBtn.Click += StartGameBtn_Click;
 
+            // Кнопка таблицы рекордов
+            recordsBtn = new Button
+            {
+                Text = "Таблица рекордов",
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = Color.LightSkyBlue,
+                Size = new Size(200, 40),
+                Dock = DockStyle.Bottom,
+                Margin = new Padding(20)
+            };
+            recordsBtn.Click += RecordsBtn_Click;
+
             // Панель с изображениями
             imagesFlowPanel = new FlowLayoutPanel
             {
@@ -97,6 +115,7 @@ namespace Puzzle
             // Добавляем элементы на форму
             this.Controls.Add(imagesFlowPanel);
             this.Controls.Add(startGameBtn);
+            this.Controls.Add(recordsBtn);
             this.Controls.Add(difficultyPanel);
             this.Controls.Add(titleLabel);
         }
@@ -119,36 +138,35 @@ namespace Puzzle
             if (!Directory.Exists(imageFolder))
             {
                 Directory.CreateDirectory(imageFolder);
+                imagePaths = new string[0];
                 return;
             }
 
             string[] extensions = { "*.jpg", "*.jpeg", "*.png", "*.bmp", "*.gif" };
-            var imageFiles = extensions.SelectMany(ext => Directory.GetFiles(imageFolder, ext)).ToArray();
-            imagePaths = imageFiles;
+            imagePaths = extensions.SelectMany(ext => Directory.GetFiles(imageFolder, ext)).ToArray();
         }
 
         private void LoadImagesToPanel()
         {
             imagesFlowPanel.Controls.Clear();
 
-            if (imagePaths != null && imagePaths.Length > 0)
+            if (imagePaths.Length > 0)
             {
                 foreach (string imagePath in imagePaths)
                 {
-                    var imagePanel = CreateImagePanel(imagePath);
-                    imagesFlowPanel.Controls.Add(imagePanel);
+                    var panel = CreateImagePanel(imagePath);
+                    imagesFlowPanel.Controls.Add(panel);
                 }
             }
             else
             {
-                var label = new Label
+                imagesFlowPanel.Controls.Add(new Label
                 {
                     Text = "Нет доступных изображений. Добавьте изображения в папку Assets/Images",
                     TextAlign = ContentAlignment.MiddleCenter,
                     Dock = DockStyle.Fill,
                     Font = new Font("Arial", 12)
-                };
-                imagesFlowPanel.Controls.Add(label);
+                });
             }
         }
 
@@ -186,16 +204,15 @@ namespace Puzzle
                         Font = new Font("Arial", 9)
                     };
 
-                    // Выделение выбранного изображения
-                    panel.Click += (s, e) => SelectImage(panel, imagePath);
-                    pictureBox.Click += (s, e) => SelectImage(panel, imagePath);
-                    label.Click += (s, e) => SelectImage(panel, imagePath);
+                    panel.Click += (s, e) => SelectImage(panel, imagePath, label.Text);
+                    pictureBox.Click += (s, e) => SelectImage(panel, imagePath, label.Text);
+                    label.Click += (s, e) => SelectImage(panel, imagePath, label.Text);
 
                     panel.Controls.Add(pictureBox);
                     panel.Controls.Add(label);
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 panel.Controls.Add(new Label
                 {
@@ -209,9 +226,8 @@ namespace Puzzle
             return panel;
         }
 
-        private void SelectImage(Panel selectedPanel, string imagePath)
+        private void SelectImage(Panel selectedPanel, string imagePath, string puzzleTitle)
         {
-            // Снимаем выделение со всех панелей
             foreach (Control control in imagesFlowPanel.Controls)
             {
                 if (control is Panel panel)
@@ -221,7 +237,6 @@ namespace Puzzle
                 }
             }
 
-            // Выделяем выбранную панель
             selectedPanel.BackColor = Color.LightBlue;
             selectedPanel.BorderStyle = BorderStyle.Fixed3D;
 
@@ -232,11 +247,42 @@ namespace Puzzle
                 {
                     selectedImage = new Bitmap(originalImage);
                 }
+
+                selectedPuzzle = new PuzzleItem
+                {
+                    PuzzleID = GetPuzzleIDByTitle(puzzleTitle),
+                    Title = puzzleTitle
+                };
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка загрузки изображения: {ex.Message}");
             }
+        }
+
+        // Метод получения PuzzleID из базы по названию
+        private int GetPuzzleIDByTitle(string title)
+        {
+            int id = 0;
+            string connectionString = $@"Server=(localdb)\MSSQLLocalDB;Database=puzzleGame;
+                                         Integrated Security=True;TrustServerCertificate=True;";
+            try
+            {
+                using (var conn = new System.Data.SqlClient.SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT PuzzleID FROM Puzzles WHERE Title=@Title";
+                    using (var cmd = new System.Data.SqlClient.SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Title", title);
+                        var result = cmd.ExecuteScalar();
+                        if (result != null)
+                            id = Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch { }
+            return id;
         }
 
         private void StartGameBtn_Click(object sender, EventArgs e)
@@ -248,9 +294,36 @@ namespace Puzzle
                 return;
             }
 
-            var gameForm = new GameForm(selectedImage, gridSize);
-            gameForm.Show();
-            // this.Hide(); // Можно скрыть главную форму, если нужно
+            if (selectedPuzzle == null || selectedPuzzle.PuzzleID == 0)
+            {
+                MessageBox.Show("Пазл не найден в базе данных!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (var loginForm = new LoginForm())
+            {
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    string username = loginForm.Username;  
+                    int userID = loginForm.UserID;         
+
+                    var gameForm = new GameForm(selectedImage, gridSize, username, userID, selectedPuzzle.PuzzleID, selectedPuzzle.Title);
+                    gameForm.Show();
+                }
+            }
+        }
+
+        private void RecordsBtn_Click(object sender, EventArgs e)
+        {
+            var tableRecordsForm = new TableRecords();
+            tableRecordsForm.ShowDialog();
+        }
+
+        // Вспомогательный класс для хранения выбранного пазла
+        private class PuzzleItem
+        {
+            public int PuzzleID { get; set; }
+            public string Title { get; set; }
         }
     }
 }
