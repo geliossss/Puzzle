@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; 
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -58,7 +58,10 @@ namespace Puzzle
                         recordsGrid.DataSource = dt;
 
                         if (recordsGrid.Columns.Contains("RecordID"))
+                        {
                             recordsGrid.Columns["RecordID"].HeaderText = "ID записи";
+                            recordsGrid.Columns["RecordID"].Visible = false;
+                        }
                         if (recordsGrid.Columns.Contains("Username"))
                             recordsGrid.Columns["Username"].HeaderText = "Игрок";
                         if (recordsGrid.Columns.Contains("Title"))
