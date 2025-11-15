@@ -236,34 +236,5 @@ namespace Puzzle
             puzzleImage?.Dispose();
             base.OnFormClosed(e);
         }
-
-        private void SaveGameResult(TimeSpan timeTaken, int moves, int score)
-        {
-            try
-            {
-                using (var conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = @"INSERT INTO Records 
-                    (UserID, PuzzleID, Score, TimeSpent, MovesCount, DifficultyLevel)
-                     VALUES (@UserID, @PuzzleID, @Score, @TimeSpent, @MovesCount, @DifficultyLevel)";
-                    using (var cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@UserID", currentUserID);
-                        cmd.Parameters.AddWithValue("@PuzzleID", puzzleID);
-                        cmd.Parameters.AddWithValue("@Score", score);
-                        cmd.Parameters.AddWithValue("@TimeSpent", (int)timeTaken.TotalSeconds);
-                        cmd.Parameters.AddWithValue("@MovesCount", moves);
-                        cmd.Parameters.AddWithValue("@DifficultyLevel", difficultyText);
-
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка сохранения результата: {ex.Message}");
-            }
-        }
     }
 }
